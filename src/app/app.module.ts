@@ -10,16 +10,25 @@ import { MotoristHomePage } from '../pages/motorist-home/motorist-home';
 import { MotoristParkingZonesPage } from '../pages/motorist-parking-zones/motorist-parking-zones';
 import { ParkingSlotsViewPage } from '../pages/parking-slots-view/parking-slots-view';
 import { AddParkingZonesPage } from '../pages/add-parking-zones/add-parking-zones';
-import {AngularFireModule} from 'angularfire2'
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
   const config = {
-    apiKey: "AIzaSyDvJRmuxeCcLgYFjVcPn95Q4Ik_kgLcDDo",
-    authDomain: "parking-slot-e2d34.firebaseapp.com",
-    databaseURL: "https://parking-slot-e2d34.firebaseio.com",
-    projectId: "parking-slot-e2d34",
-    storageBucket: "parking-slot-e2d34.appspot.com",
-    messagingSenderId: "825301607818"
+    // apiKey: "AIzaSyDvJRmuxeCcLgYFjVcPn95Q4Ik_kgLcDDo",
+    // authDomain: "parking-slot-e2d34.firebaseapp.com",
+    // databaseURL: "https://parking-slot-e2d34.firebaseio.com",
+    // projectId: "parking-slot-e2d34",
+    // storageBucket: "parking-slot-e2d34.appspot.com",
+    // messagingSenderId: "825301607818"
+
+    apiKey: "AIzaSyBk6-2s04gErqH5sk17FxMQvRVV31F8vKE",
+    authDomain: "ionic2-8864e.firebaseapp.com",
+    databaseURL: "https://ionic2-8864e.firebaseio.com",
+    projectId: "ionic2-8864e",
+    storageBucket: "",
+    messagingSenderId: "397058415053"
   };
 
 
@@ -42,7 +51,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(config),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AngularFireModule } from 'angularfire2';
+import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 
+import { AdminParkingZonesPage} from '../../pages/admin-parking-zones/admin-parking-zones';
 
 class ParkingZone {
   location: string
@@ -26,7 +28,7 @@ export class AddParkingZonesPage {
 
 	
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireModule) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
   }
 
   ionViewDidLoad() {
@@ -35,8 +37,10 @@ export class AddParkingZonesPage {
 
   AddParkingZone(){
   	console.log(this.parkingZone.location);
-  	this.af.database.list('/parkingZones').push(this.parkingZone)
-    this.parkingZone = new ParkingZone()
+  	this.af.list('/parkingZones').push(this.parkingZone)
+    this.parkingZone = new ParkingZone();
+
+    this.navCtrl.push(AdminParkingZonesPage);
   }
 
 }
